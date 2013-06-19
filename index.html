@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>SQL or noSQL?</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <section>
+          <img src="images/opi-logo.png" />
+          <h1>SQL or noSQL?</h1>
+          <h3>What am I giving up/gaining?</h3>
+          <p>Andy Miller / amiller@objectpartners.com</p>
+         </section>
+
+        <section>
+          <h2>How did this start?</h2>
+
+          <ul>
+            <li>After hearing EMC state <em>"We recommend mongoDB for all new development."</em><br /><br /></li>
+            <li>And after using Mongo on a couple client projects<br /><br /></li>
+            <li class="fragment">I wanted to see if it would work for MTM.
+                <ul class="fragment">
+                <li>Was this app best suited for SQL?</li>
+                <li>for noSQL?</li>
+                <li>or a combination?</li>
+            </li>
+            <li class="fragment">Exporting projects as json seemed like a good match for mongo, so why not try it and see what's up...</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>noSQL Defined</h2>
+          <ul>
+            <li>...modern web-scale databases</li>
+            <li class="fragment">...schema-free</li>
+            <li class="fragment">...easy replication support</li>
+            <li class="fragment">...simple API</li>
+            <li class="fragment">...eventually consistent / BASE (not ACID)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>SQL &equiv; relational database</h2>
+          <ul>
+            <li class="fragment">...a database that has a collection of formally described tables and organized according to the relational model</li>
+            <li class="fragment">...each table identifies a primary key</li>
+            <li class="fragment">...tables can relate by using foreign keys</li>
+            <li class="fragment">...ACID (<strong>A</strong>tomicity, <strong>C</strong>onsistency, <strong>I</strong>solation, <strong>D</strong>urability)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>noSQL Database Categories...</h2>
+          <p><small>from <a href="http://nosql-database.org">nosql-database.org</a></small></p>
+          <ul class="fragment">
+            <li>Wide Column Store / Column Families</li>
+            <li>Document Store</li>
+            <li>Key Value / Tuple Store</li>
+            <li>Graph Databases</li>
+            <li class="fragment">Multimodel Databases</li>
+            <li class="fragment">Object Databases</li>
+            <li class="fragment">Grid & Cloud Database Solutions</li>
+            <li class="fragment">XML Databases</li>
+            <li class="fragment">Multidimensional Databases</li>
+            <li class="fragment">Multivalue Databases</li>
+            <li class="fragment">Event Sourcing</li>
+            <li class="fragment">"Other"</li>
+            <li class="fragment">"unresolved" and "uncategorized"</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Experience with</h2>
+          <ul>
+            <li><small>Wide Column Store / Column Families</small></li>
+            <li>Document Store &mdash; <strong>mongo</strong></li>
+            <li>Key Value / Tuple Store &mdash; <strong>redis, S3</strong></li>
+            <li><small>Graph Databases</small></li>
+            <li><small>Multimodel Databases</small></li>
+            <li>Object Databases &mdash; <strong>objectstore, poet, versant</strong></li>
+            <li><small>Grid & Cloud Database Solutions</small></li>
+            <li><small>XML Databases</small></li>
+            <li><small>Multidimensional Databases</small></li>
+            <li><small>Multivalue Databases</small></li>
+            <li><small>Event Sourcing</small></li>
+            <li><small>"Other"</small></li>
+            <li><small>"unresolved" and "uncategorized"</small></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2><a href="http://www.mongodb.org/">mongodb.org</a></h2>
+
+          <ul>
+            <li>open-source document database</li>
+            <li>JSON-style documents with dynamic schemas</li>
+            <li>full index support</li>
+            <li class="fragment">replication & high availability</li>
+            <li class="fragment">auto-sharding</li>
+            <li class="fragment">document-based queries</li>
+            <li class="fragment">atomic modifiers</li>
+            <li class="fragment">map/reduce</li>
+            <li class="fragment">GridFS file storage</li>
+            <li class="fragment">professional support (<a href="http://www.10gen.com/">10gen.com</a>)</li>
+          </ul>
+          <aside class="notes">
+            mongo indexes do not lock tables or parts of tables!
+          </aside>
+        </section>
+
+        <section>
+          <h2>MTM</h2>
+          <p><small><a href="https://github.com/onetribeyoyo/mtm">github.com/onetribeyoyo/mtm</a></small></p>
+          <p><br /><br /><em>(live)</em></p>
+
+          <aside class="notes">
+            sketch it live
+            describe the parts that looked like they deserved a noSQL/json solution
+          </aside>
+        </section>
+
+        <section>
+          <h2>Converting the app</h2>
+          <ul>
+            <li>BuildConfig.groovy</li>
+            <li>converting the datasource</li>
+            <li>try it...</li>
+            <li class="fragment">It works.  I must have missed something?</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Run the tests</h2>
+          <p><br /><br /><em>(live)</em></p>
+          <p><br /><br />...I must have missed something</p>
+        </section>
+
+        <section>
+          <h2>Grails mongoDb plugin</h2>
+          <p><small><a href="http://grails.org/plugin/mongodb">grails.org/plugin/mongodb</a></small></p>
+
+          <ul class="fragment">
+            <li>Story.list()</li>
+            <li>Story.get(42), Story.getAll(5, 6, 7)</li>
+            <li>Story.list(max: 5, sort: "first", order: "desc"), Story.listOrderBySpecialty()</li>
+            <li class="fragment">Story.findByEstimateGreaterThan(8)</li>
+            <li class="fragment">...</li>
+            <li class="fragment">criteria queries</li>
+            <li class="fragment">projections</li>
+            <li class="fragment">query by example</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Grails mongoDb plugin</h2>
+          <p><small><a href="http://grails.org/plugin/mongodb">grails.org/plugin/mongodb</a></small></p>
+
+          <p>Not supported...</p>
+          <ul>
+            <li class="fragment">Criteria queries on associations</li>
+            <li class="fragment">HQL</li>
+            <li class="fragment">Groovy SQL</li>
+          </ul>
+
+          <p class="fragment"><br /><br />The big one...</p>
+          <p class="fragment">TRANSACTIONS!</p>
+        </section>
+
+        <section>
+          <h2>MTM Domain Model</h2>
+          <pre class="fragment"><code>
+          +-----------+          +-----------+         +-----------+
+          |  project  +----------+   story   +---------+  ordering |
+          +-----------+        * +-----------+       * +-----------+
+                |                      |
+                |*                     |* vector
+          +-----------+               /
+          | dimension |              /
+          +-----------+             /
+                |                  /
+                |*                /
+          +-----------+          /
+          |  element  +----------
+          +-----------+
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>MTM Domain Model</h2>
+          <pre><code>
+        +-----------+
+        |  project  |
+        +-----------+
+              |
+              |*
+        +-----------+
+        | dimension |
+        +-----------+
+              |
+              |*
+        +-----------+
+        |  element  |
+        +-----------+
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>MTM Domain Model</h2>
+          <pre><code>
+                                 +-----------+         +-----------+
+                                 |   story   +---------+  ordering |
+                                 +-----------+       * +-----------+
+                                       |
+                                       |* vector
+                                 +-----------+
+                                 |  element  |
+                                 +-----------+
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>MTM Domain Model</h2>
+          <pre><code>
+          +-----------+          +-----------+         +-----------+
+          |  project  +----------+   story   +---------+  ordering |
+          +-----------+        * +-----------+       * +-----------+
+                |                      |
+                |*                     |* vector
+          +-----------+               /
+          | dimension |              /
+          +-----------+             /
+                |                  /
+                |*                /
+          +-----------+          /
+          |  element  +----------
+          +-----------+
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Testing without Transactions</h2>
+          <ul>----------------------------
+            <li><code>MongoUtils</code></li>
+            <li><code>MongoISpec</code> classes</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>What are we missing?</h2>
+          <ul>
+            <li>transactions</li>
+            <li class="fragment">in memory mongo</li>
+            <li class="fragment"><code>beforeInsert()</code></li>
+            <li class="fragment">...?
+              <p class="fragment"><small><a href="http://jira.grails.org/browse/GPMONGODB">jira.grails.org/browse/GPMONGODB</a></small></p>
+            </li>
+            <li class="fragment">familiar query tools</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Query Tools</h2>
+          <ul>
+            <li>mongohub</li>
+            <li class="fragment"><em>(live)</em></li>
+            <li class="fragment">rockmongo</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Are the advantages real?</h2>
+          <ul>
+            <li class="fragment">simplified deployment (mongo is easier to install than mysql)</li>
+            <li class="fragment">master/slave is trivial to setup and configure</li>
+            <li class="fragment">trivial backup and recovery (collecitons are files, just copy them to/from s3)</li>
+            <li class="fragment">easy sharding (yes, I know it can be done with mysql but lets try this on your dev box...)</li>
+            <li class="fragment">don't worry about mapping fields using sql reserved works (e.g. "order")</li>
+            <li class="fragment">embedded collections saved in mongo preserve order.  why?  'cause a json "list" is written in and then read back out in the same order.</li>
+            <li class="fragment">...?</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Disadvantages?</h2>
+          <ul>
+            <li class="fragment">schema evolution (no liquibase, but there is mongeez)</li>
+            <li class="fragment">embedded objects are not domain objects (they don't have constraints, no addToXyzzy, ...</li>
+            <li class="fragment">schemaless mongoDB doesn't implement field data types
+            <li class="fragment">schemaless mongoDB doesn't implement field constraints (nullable, size limits, etc.)  Because of this the data is not "portable" without the executble application.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Schema Evolution vs. Self-healing Data</h2>
+          <ul>
+            <li class="fragment">self-healing domain objects ensure default values can be determined or derived from existing data</li>
+          </ul>
+          <p class="fragment">or</p>
+          <ul>
+            <li class="fragment">evolve the data in place with <a href="https://github.com/secondmarket/mongeez">github.com/secondmarket/mongeez</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Schema Evolution with Dynamic Attributes</h2>
+          <pre><code>
+          def foo = new Story(summary: "xyzzy", ...)
+
+          // add fields dynamically...
+          foo["eta"] = new Date() + 3
+          foo.save()
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Conclusions</h2>
+
+          <ol>
+            <li class="fragment">Is mongo a danger to you and your data?</li>
+            <p class="fragment">No.<br /><br /></p>
+
+            <li class="fragment">Is mongo a replacement for mysql?</li>
+            <p class="fragment">Yes.<br /><br /></p>
+
+            <li class="fragment">Should all new projects start with mongo?</li>
+            <p class="fragment">No.<br /><br /></p>
+
+            <li class="fragment">Is noSQL (mongo) better than sql?</li>
+            <p class="fragment">Well... <span class="fragment">it depends.</span></p>
+          </ol>
+
+          <aside class="notes">
+            The Relational model is based on relational calculus and relational Algebra.  This is math (set theory) and
+            operations like filtering, joining, ... are are provably correct.
+          </aside>
+        </section>
+
+        <section>
+          <p><a href="http://nosql-database.org/">http://nosql-database.org/</a></p>
+          <p><a href="http://www.mongodb.org/">http://www.mongodb.org/</a></p>
+          <p><a href="http://grails.org/plugin/mongodb">http://grails.org/plugin/mongodb</a></p>
+          <p><a href="http://www.10gen.com/">http://www.10gen.com/</a></p>
+          <p><a href="https://github.com/onetribeyoyo/mtm">https://github.com/onetribeyoyo/mtm</a></p>
+          <p><a href="https://github.com/secondmarket/mongeez">https://github.com/secondmarket/mongeez</a></p>
+          <h1>- - - -</h1>
+          <p>Andy Miller / amiller@objectpartners.com</p>
+          <img src="images/opi-logo-middle.png" />
+         </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+          // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+          // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
