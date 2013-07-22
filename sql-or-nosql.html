@@ -364,6 +364,57 @@
         </section>
 
         <section>
+          <h2>Data structure</h2>
+          <pre><code>
+{ "_id" : "51ed4d10744eb986c22bac4a",
+  "blocked" : false,
+  "estimate" : 0,
+  "project" : "51ed4d0f744eb986c22bac31",
+  "summary" : "xyzzy 55",
+  "version" : 71,
+  "detail" : null,
+  "vector" : [
+    "51ed4d0f744eb986c22bac42",
+    "51ed4d0f744eb986c22bac3e",
+    "51ed4d0f744eb986c22bac38" ] }
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Data structure</h2>
+          <pre><code>
+( :_id "51ed4d10744eb986c22bac4a"
+  :blocked nil
+  :estimate 0
+  :project "51ed4d0f744eb986c22bac31"
+  :summary "xyzzy 55"
+  :version 71
+  :detail nil
+  :vector (
+    "51ed4d0f744eb986c22bac42"
+    "51ed4d0f744eb986c22bac3e"
+    "51ed4d0f744eb986c22bac38" ) )
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Data structure</h2>
+          <pre><code>
+{ "_id" : "51ed4d10744eb986c22bac4a",     | ( :_id "51ed4d10744eb986c22bac4a"
+  "blocked" : false,                      |   :blocked nil
+  "estimate" : 0,                         |   :estimate 0
+  "project" : "51ed4d0f744eb986c22bac31", |   :project "51ed4d0f744eb986c22bac31"
+  "summary" : "xyzzy 55",                 |   :summary "xyzzy 55"
+  "version" : 71,                         |   :version 71
+  "detail" : null,                        |   :detail nil
+  "vector" : [                            |   :vector (
+    "51ed4d0f744eb986c22bac42",           |     "51ed4d0f744eb986c22bac42"
+    "51ed4d0f744eb986c22bac3e",           |     "51ed4d0f744eb986c22bac3e"
+    "51ed4d0f744eb986c22bac38" ] }        |     "51ed4d0f744eb986c22bac38" ) )
+          </code></pre>
+        </section>
+
+        <section>
           <h2>ID:Long vs ID:String</h2>
           <ul>
             <li class="fragment">RDBMS use sequences to generate ID values<br />
@@ -381,7 +432,7 @@
             <li class="fragment">OR MongoDB can use UUIDs as ID values
                 <ul>
                   <li class="fragment">dimension.id = "51ec81f7744e7c5811f6cfc8"</li>
-                  <li class="fragment">cleaner, but numeric ID's might be easier to integrate with legacy systems?</li> 
+                  <li class="fragment">cleaner, but numeric ID's might be easier to integrate with legacy systems?</li>
                 </ul>
           </ul>
 
